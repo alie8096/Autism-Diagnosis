@@ -142,6 +142,44 @@ def convert_markdown_to_html(input_file, output_file):
             max-width: 1000px;
         }}
 
+        .source-button {{
+            position: fixed;
+            bottom: 20px;
+            left: 20px;
+            background-color: orange;
+            color: white;
+            border: none;
+            border-radius: 50%;
+            width: 60px;
+            height: 60px;
+            font-size: 24px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            cursor: pointer;
+            transition: all 0.3s;
+        }}
+
+        .source-button:hover {{
+            background-color: #ff9900bb;
+            transform: scale(1.1);
+        }}
+
+        .source-button:hover::after {{
+            content: "مشاهده سورس پروژه";
+            position: absolute;
+            bottom: 70px;
+            left: 50%;
+            transform: translateX(-35%);
+            background-color: #333333c7;
+            color: white;
+            padding: 5px 10px;
+            border-radius: 5px;
+            font-size: 14px;
+            white-space: nowrap;
+        }}
+
         @media screen and (max-width: 768px) {{
             body {{
                 padding: 0;
@@ -172,6 +210,9 @@ def convert_markdown_to_html(input_file, output_file):
 <div dir="rtl" class="container">
 {html_content}
 </div>
+<button class="source-button" onclick="window.open('https://github.com/alie8096/Autism-Diagnosis', '_blank')">
+    <i class="fas fa-code"></i>
+</button>
 <script>
     document.addEventListener("DOMContentLoaded", function() {{
         MathJax.typesetPromise();
