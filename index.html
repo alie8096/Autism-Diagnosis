@@ -118,6 +118,44 @@
             max-width: 1000px;
         }
 
+        .source-button {
+            position: fixed;
+            bottom: 20px;
+            left: 20px;
+            background-color: orange;
+            color: white;
+            border: none;
+            border-radius: 50%;
+            width: 60px;
+            height: 60px;
+            font-size: 24px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .source-button:hover {
+            background-color: #ff9900bb;
+            transform: scale(1.1);
+        }
+
+        .source-button:hover::after {
+            content: "مشاهده سورس پروژه";
+            position: absolute;
+            bottom: 70px;
+            left: 50%;
+            transform: translateX(-35%);
+            background-color: #333333c7;
+            color: white;
+            padding: 5px 10px;
+            border-radius: 5px;
+            font-size: 14px;
+            white-space: nowrap;
+        }
+
         @media screen and (max-width: 768px) {
             body {
                 padding: 0;
@@ -180,10 +218,240 @@
 <li><strong>مجموعه داده بزرگسالان</strong>: شامل ۷۰۴ ردیف و ۲۱ ستون.  </li>
 </ul>
 <h3>۱.۲ پرسشنامه‌ها</h3>
+<h4>۱.۲.۱ کودکان خردسال</h4>
 <ul>
-<li><strong>کودکان خردسال</strong>: داده‌ها از پرسشنامه‌ای شامل ارزیابی ۱۰ ویژگی رفتاری با پاسخ‌های چند گزینه‌ای ("همیشه"، "معمولاً"، "گاهی اوقات"، "هرگز") جمع‌آوری شده‌اند. این پاسخ‌ها به مقادیر باینری (۰ و ۱) نگاشت شده و امتیاز بیشتر از ۳ نشان‌دهنده احتمال صفات اوتیسمی است.  </li>
-<li><strong>بزرگسالان</strong>: پرسشنامه شامل ۱۰ سوال (A1–A10) است که ویژگی‌های رفتاری خاصی را ارزیابی می‌کند.  </li>
+<li>
+<p><strong>داده‌ها و نحوه امتیازدهی پرسشنامه (Q-CHAT-10):</strong><br />
+داده‌های پرسشنامه شامل ارزیابی ۱۰ ویژگی رفتاری با پاسخ‌های چندگزینه‌ای ("همیشه"، "معمولاً"، "گاهی اوقات"، "به ندرت"، "هرگز") جمع‌آوری شده‌اند.  </p>
+</li>
+<li>
+<p><strong>سوال‌های ۱ تا ۹:</strong> اگر پاسخ‌ها در ستون‌های "گاهی اوقات"، "به ندرت"، یا "هرگز" باشند، به هر سوال یک امتیاز تعلق می‌گیرد.  </p>
+</li>
+<li><strong>سوال ۱۰:</strong> اگر پاسخ در ستون‌های "همیشه"، "معمولاً"، یا "گاهی اوقات" باشد، یک امتیاز برای آن سوال ثبت می‌شود.  </li>
 </ul>
+<p>در نهایت، امتیاز کل با جمع‌بندی امتیازهای ده سوال به دست می‌آید. اگر امتیاز کل ۳ یا بیشتر باشد، این ممکن است نشان‌دهنده احتمال وجود صفات اوتیسمی باشد و به تشخیص نیازمند بررسی‌های تخصصی توسط یک تیم چندرشته‌ای است.</p>
+<ul>
+<li><strong>جدول (Q-CHAT-10) ترجمه شده به فارسی</strong></li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>شماره</th>
+<th>سوال</th>
+<th>گزینه 1</th>
+<th>گزینه 2</th>
+<th>گزینه 3</th>
+<th>گزینه 4</th>
+<th>گزینه 5</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>آیا کودک شما هنگام صدا زدن نامش به شما نگاه می‌کند؟</td>
+<td>همیشه</td>
+<td>معمولاً</td>
+<td>گاهی اوقات</td>
+<td>به ندرت</td>
+<td>هرگز</td>
+</tr>
+<tr>
+<td>2</td>
+<td>چقدر آسان است که با کودک خود تماس چشمی برقرار کنید؟</td>
+<td>خیلی آسان</td>
+<td>نسبتاً آسان</td>
+<td>نسبتاً سخت</td>
+<td>خیلی سخت</td>
+<td>غیرممکن</td>
+</tr>
+<tr>
+<td>3</td>
+<td>آیا کودک شما برای نشان دادن چیزی که می‌خواهد (مثلاً یک اسباب‌بازی دور از دسترس) اشاره می‌کند؟</td>
+<td>چندین بار در روز</td>
+<td>چند بار در روز</td>
+<td>چند بار در هفته</td>
+<td>کمتر از یک بار در هفته</td>
+<td>هرگز</td>
+</tr>
+<tr>
+<td>4</td>
+<td>آیا کودک شما برای نشان دادن علاقه‌مندی خود به چیزی (مثلاً اشاره به یک منظره جالب) اشاره می‌کند؟</td>
+<td>چندین بار در روز</td>
+<td>چند بار در روز</td>
+<td>چند بار در هفته</td>
+<td>کمتر از یک بار در هفته</td>
+<td>هرگز</td>
+</tr>
+<tr>
+<td>5</td>
+<td>آیا کودک شما نقش‌بازی می‌کند؟ (مثلاً مراقبت از عروسک‌ها یا صحبت با یک تلفن اسباب‌بازی)</td>
+<td>چندین بار در روز</td>
+<td>چند بار در روز</td>
+<td>چند بار در هفته</td>
+<td>کمتر از یک بار در هفته</td>
+<td>هرگز</td>
+</tr>
+<tr>
+<td>6</td>
+<td>آیا کودک شما دنبال می‌کند که شما به کجا نگاه می‌کنید؟</td>
+<td>چندین بار در روز</td>
+<td>چند بار در روز</td>
+<td>چند بار در هفته</td>
+<td>کمتر از یک بار در هفته</td>
+<td>هرگز</td>
+</tr>
+<tr>
+<td>7</td>
+<td>اگر شما یا فرد دیگری در خانواده به‌طور مشهود ناراحت باشید، آیا کودک شما نشانه‌ای از تمایل به دلداری دادن نشان می‌دهد؟ (مثلاً نوازش مو، بغل کردن)</td>
+<td>همیشه</td>
+<td>معمولاً</td>
+<td>گاهی اوقات</td>
+<td>به ندرت</td>
+<td>هرگز</td>
+</tr>
+<tr>
+<td>8</td>
+<td>آیا اولین کلمات کودک شما را می‌توان اینگونه توصیف کرد:</td>
+<td>خیلی معمولی</td>
+<td>نسبتاً معمولی</td>
+<td>کمی غیرمعمول</td>
+<td>خیلی غیرمعمول</td>
+<td>کودک من صحبت نمی‌کند</td>
+</tr>
+<tr>
+<td>9</td>
+<td>آیا کودک شما از حرکات ساده استفاده می‌کند؟ (مثلاً خداحافظی با دست)</td>
+<td>چندین بار در روز</td>
+<td>چند بار در روز</td>
+<td>چند بار در هفته</td>
+<td>کمتر از یک بار در هفته</td>
+<td>هرگز</td>
+</tr>
+<tr>
+<td>10</td>
+<td>آیا کودک شما به چیزی بدون هدف مشخص خیره می‌شود؟</td>
+<td>چندین بار در روز</td>
+<td>چند بار در روز</td>
+<td>چند بار در هفته</td>
+<td>کمتر از یک بار در هفته</td>
+<td>هرگز</td>
+</tr>
+</tbody>
+</table>
+<p>این جدول فارسی‌شده (Q-CHAT-10) است که بر اساس <a href="https://www.autismresearchcentre.com/tests/quantitative-checklist-for-autism-in-toddlers-10-items-q-chat-10/">www.autismresearchcentre.com</a> می‌باشد.</p>
+<h4><strong>۱.۲.۲ بزرگسالان</strong></h4>
+<ul>
+<li>
+<p><strong>داده‌ها و نحوه امتیازدهی پرسشنامه (AQ-10):</strong><br />
+این پرسشنامه شامل ۱۰ سوال است که هدف آن ارزیابی سریع صفات اوتیسمی در بزرگسالان بدون ناتوانی یادگیری است. پاسخ‌ها در چهار گزینه ("کاملاً موافق"، "تا حدی موافق"، "تا حدی مخالف"، "کاملاً مخالف") ارائه می‌شوند.  </p>
+</li>
+<li>
+<p><strong>امتیازدهی:</strong>  </p>
+<ul>
+<li>برای سوال‌های ۱، ۷، ۸ و ۱۰: اگر پاسخ "کاملاً موافق" یا "تا حدی موافق" باشد، یک امتیاز تعلق می‌گیرد.  </li>
+<li>برای سوال‌های ۲، ۳، ۴، ۵، ۶ و ۹: اگر پاسخ "کاملاً مخالف" یا "تا حدی مخالف" باشد، یک امتیاز تعلق می‌گیرد.  </li>
+<li>اگر امتیاز کل ۶ یا بیشتر باشد، ممکن است ارجاع به ارزیابی تخصصی تشخیصی ضروری باشد.  </li>
+</ul>
+</li>
+<li>
+<p><strong>جدول (AQ-10) ترجمه شده به فارسی</strong></p>
+</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>شماره</th>
+<th>سوال</th>
+<th>گزینه ۱ ("کاملاً موافق")</th>
+<th>گزینه ۲ ("تا حدی موافق")</th>
+<th>گزینه ۳ ("تا حدی مخالف")</th>
+<th>گزینه ۴ ("کاملاً مخالف")</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>۱</td>
+<td>من اغلب صداهای ریز را متوجه می‌شوم که دیگران متوجه نمی‌شوند.</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>۲</td>
+<td>معمولاً بیشتر روی کل تصویر تمرکز می‌کنم تا جزئیات کوچک.</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>۳</td>
+<td>برای من انجام چند کار به طور همزمان آسان است.</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>۴</td>
+<td>اگر وقفه‌ای پیش بیاید، می‌توانم خیلی سریع به کاری که انجام می‌دادم بازگردم.</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>۵</td>
+<td>فهمیدن مفهوم پنهان صحبت دیگران برای من آسان است.</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>۶</td>
+<td>می‌دانم چگونه بفهمم که آیا کسی که به صحبت‌های من گوش می‌دهد خسته شده است یا خیر.</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>۷</td>
+<td>وقتی داستانی می‌خوانم، برایم سخت است نیت شخصیت‌ها را بفهمم.</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>۸</td>
+<td>من دوست دارم اطلاعاتی در مورد دسته‌بندی‌های مختلف (مثلاً انواع ماشین، انواع پرنده، انواع قطار و ...) جمع‌آوری کنم.</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>۹</td>
+<td>فهمیدن احساس یا فکر کسی تنها با نگاه کردن به صورت او برای من آسان است.</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>۱۰</td>
+<td>فهمیدن نیت افراد برای من دشوار است.</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p>این جدول فارسی‌شده (AQ-10) بر اساس <a href="https://www.autismresearchcentre.com/tests/autism-spectrum-quotient-10-items-aq-10-adult/">www.autismresearchcentre.com</a> تهیه شده است.</p>
 <h3>۱.۳ روش‌شناسی</h3>
 <p>در این مطالعه از <strong>شبکه‌های عصبی کانولوشنی (CNN)</strong> برای شناسایی الگوها در داده‌ها استفاده شده است. معماری این شبکه شامل لایه‌های مختلفی مانند <strong>لایه کانولوشنی</strong>، <strong>لایه ماکس پولینگ</strong> و <strong>لایه کاملاً متصل</strong> است که هر کدام وظیفه خاصی را انجام می‌دهند.<br />
 لایه کانولوشنی شامل فیلترهایی است که با اعمال عملیات کانولوشن، نقشه‌های ویژگی (Feature Maps) را از ویژگی‌های ورودی تولید می‌کنند. معادله این عملیات به صورت زیر تعریف شده است:<br />
@@ -729,15 +997,49 @@ $$ f = V(x * w_f + y_f) $$
 </div>
 
 <hr />
+<h2><strong>نتیجه‌گیری</strong></h2>
+<p>در این گزارش، دو مقاله مورد بررسی قرار گرفت که هر یک به تحلیل داده‌های مرتبط با شناسایی اختلالات طیف اوتیسم اختصاص داشتند. دیتاست‌های مورد استفاده از منابع معتبر نظیر Kaggle استخراج شده و ویژگی‌های متنوعی را پوشش داده‌اند:  </p>
+<ol>
+<li><strong>مقاله اول</strong> از داده‌های مربوط به کودکان خردسال و بزرگسالان استفاده کرده است. این داده‌ها به نسبت ۲۰ درصد برای آزمایش و ۸۰ درصد برای آموزش تقسیم شده‌اند.  </li>
+<li><strong>چالش اصلی</strong>: تحلیل داده‌های متنی و عددی مرتبط با پاسخ‌گویی به پرسش‌نامه‌ها.  </li>
+<li><strong>مزیت</strong>: دسترسی آسان به داده‌ها و ساختار نسبتاً ساده.  </li>
+<li>
+<p><strong>مدل موفق</strong>: بهترین عملکرد در این مقاله با استفاده از <strong>درخت تصمیم</strong> به‌دست آمد که به‌دلیل قدرت آن در دسته‌بندی داده‌ها و ارائه خروجی قابل تفسیر، برای این نوع داده‌ها مناسب بود.  </p>
+</li>
+<li>
+<p><strong>مقاله دوم</strong> از تصاویر چهره کودکان مبتلا به اوتیسم بهره برده است که شامل مجموعه داده‌ای بزرگ‌تر و پیچیده‌تر بود. این داده‌ها در سه بخش آموزشی، آزمایشی و اعتباری با نسبت‌های ۸۶.۳۸٪، ۱۰.۲۲٪ و ۳.۴۱٪ تقسیم شده‌اند.  </p>
+</li>
+<li><strong>چالش اصلی</strong>: تحلیل داده‌های تصویری که نیازمند روش‌های پیشرفته مانند شبکه‌های عصبی عمیق است.  </li>
+<li><strong>مزیت</strong>: ارائه دیدگاه بصری دقیق‌تر برای شناسایی الگوها.  </li>
+<li><strong>مدل موفق</strong>: <strong>شبکه عصبی کانولوشن (CNN)</strong> با عملکرد بالا به‌عنوان مدل موفق انتخاب شد که با توجه به ساختار آن، توانایی بالایی در شناسایی ویژگی‌های بصری تصاویر داشت.  </li>
+</ol>
+<h2><strong>نتایج کلیدی</strong></h2>
+<ul>
+<li>استفاده از داده‌های متنی و عددی برای غربالگری اولیه (مقاله اول) و داده‌های تصویری برای تحلیل‌های پیشرفته‌تر (مقاله دوم) نشان داد که رویکردهای مکمل می‌توانند در بهبود تشخیص اختلالات طیف اوتیسم موثر باشند.  </li>
+<li>تقسیم مناسب داده‌ها برای آموزش، آزمایش و اعتبارسنجی در هر دو مطالعه نشان‌دهنده اهمیت استفاده از روش‌های استاندارد در پیش‌پردازش داده‌ها بود.  </li>
+<li>مدل‌های انتخاب‌شده در هر مقاله به‌خوبی با نوع داده‌ها تطابق داشته و توانسته‌اند نتایج ارزشمندی ارائه دهند.  </li>
+</ul>
+<hr />
 <h2><strong>منابع</strong></h2>
 <div dir="ltr" style="font-family: 'Georgia', 'Times New Roman', serif;">
 
-1. Priyadarshini, I. Autism Screening in Toddlers and Adults Using Deep Learning and Fair AI Techniques. *Future Internet* 2023, 15, 292. <a href="https://doi.org/10.3390/fi15090292">https://doi.org/10.3390/fi15090292</a> 
+1. Priyadarshini, I. Autism Screening in Toddlers and Adults Using Deep Learning and Fair AI Techniques. *Future Internet* 2023, 15, 292. <a href="https://doi.org/10.3390/fi15090292">https://doi.org/10.3390/fi15090292</a>
 <br>
 2. Reddy, P.; Andrew, J. Diagnosis of Autism in Children Using Deep Learning Techniques by Analyzing Facial Features. *Engineering Proceedings* 2023, 59, 198. <a href="https://doi.org/10.3390/engproc2023059198">https://doi.org/10.3390/engproc2023059198</a>  
+<br>
+3. Quantitative Checklist for Autism in Toddlers (Q-CHAT-10). Autism Research Centre. <a href="https://www.autismresearchcentre.com/tests/quantitative-checklist-for-autism-in-toddlers-10-items-q-chat-10/">https://www.autismresearchcentre.com/tests/quantitative-checklist-for-autism-in-toddlers-10-items-q-chat-10/</a>
+<br>
+4. Autism Spectrum Quotient (AQ-10) for Adults. Autism Research Centre. <a href="https://www.autismresearchcentre.com/tests/autism-spectrum-quotient-10-items-aq-10-adult/">https://www.autismresearchcentre.com/tests/autism-spectrum-quotient-10-items-aq-10-adult/</a>
+<br>
+5. Autism Screening for Toddlers Dataset. Kaggle. <a href="https://www.kaggle.com/datasets/fabdelja/autism-screening-for-toddlers">https://www.kaggle.com/datasets/fabdelja/autism-screening-for-toddlers</a>
+<br>
+6. Autism Screening for Adults Dataset. Kaggle. <a href="https://www.kaggle.com/datasets/andrewmvd/autism-screeningon-adults">https://www.kaggle.com/datasets/andrewmvd/autism-screeningon-adults</a>
 
 </div>
 </div>
+<button class="source-button" onclick="window.open('https://github.com/alie8096/Autism-Diagnosis', '_blank')">
+    <i class="fas fa-code"></i>
+</button>
 <script>
     document.addEventListener("DOMContentLoaded", function() {
         MathJax.typesetPromise();
