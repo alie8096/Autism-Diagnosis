@@ -34,6 +34,12 @@ def convert_markdown_to_html(input_file, output_file):
     <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
     <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <style>
+
+        * {{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }}
         @font-face {{
             font-family: 'B Nazanin';
             src: url('b-nazanin/BNazanin.ttf') format('truetype');
@@ -49,21 +55,38 @@ def convert_markdown_to_html(input_file, output_file):
             font-family: 'B Nazanin', 'Georgia', sans-serif;
             line-height: 1.9;
             font-size: 1.6rem;
-            margin: 5px;
-            padding: 40px;
+            margin: 0;
+            padding: 0 15px;
             background-color: #f9f9f9;
             color: #333;
+            overflow-x: hidden;
+            text-align: justify;
+        }}
+
+        .container {{
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 15px;
         }}
         h1, h2, h3, h4, h5, h6 {{
             color: #0073e6;
             margin-bottom: 10px;
+            text-align: justify;
         }}
         p {{
             margin: 10px 0;
+            text-align: justify;
+        }}
+        a {{
+            word-wrap: break-word;
+            text-decoration: none;
+            color: #0073e6;
         }}
         ul {{
             padding-left: 40px;
             list-style-type: disc;
+            text-align: justify;
         }}
         ul ul {{
             list-style-type: circle;
@@ -121,7 +144,11 @@ def convert_markdown_to_html(input_file, output_file):
 
         @media screen and (max-width: 768px) {{
             body {{
-                padding: 20px;
+                padding: 0;
+            }}
+
+            .container {{
+                padding: 10px;
             }}
             table {{
                 font-size: 14px;
@@ -134,6 +161,9 @@ def convert_markdown_to_html(input_file, output_file):
             }}
             figure {{
                 flex: 1 1 100%;
+            }}
+            a {{
+                word-break: break-word;
             }}
         }}
     </style>
