@@ -160,5 +160,5 @@ def convert_markdown_to_html(input_file, output_file):
 # Example usage
 if __name__ == "__main__":
     input_markdown_file = "report.md"  # Replace with your Markdown file path
-    output_html_file = "report.html"  # Replace with desired HTML file path
+    output_html_file = "index.html"  # Replace with desired HTML file path
     convert_markdown_to_html(input_markdown_file, output_html_file)
